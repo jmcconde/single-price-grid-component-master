@@ -24,6 +24,13 @@
 }
 
 /*
+  3. Allow percentage-based heights in the application
+*/
+html, body {
+    height: 100%;
+}
+
+/*
   Typographic tweaks!
   4. Add accessible line-height
   5. Improve text rendering
@@ -143,6 +150,7 @@ body {
     margin-top: 1rem;
     border-radius: 8px;
     color: #fff;
+    font-weight: var(--fw-bold);
     box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
     cursor: pointer;
     transition: transform .4s ease-in-out;
@@ -176,13 +184,6 @@ body {
 }
 
 @media (min-width: 769px) {
-
-    /*
-     3. Allow percentage-based heights in the application
-    */
-    html, body {
-        height: 100%;
-    }
 
     .card {
         display: grid;
