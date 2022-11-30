@@ -1,0 +1,230 @@
+:root {
+    --clr-cyan: hsl(179, 62%, 43%);
+    --clr-limegreen: hsl(71, 73%, 54%);
+    --clr-grey: hsl(204, 43%, 93%);
+    --clr-greyish-blue: hsl(218, 22%, 67%);
+
+    --ff-primary: 'Karla', sans-serif;
+
+    --fw-primary: 400;
+    --fw-bold: 700;
+}
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  6. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  7. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+  font: inherit;
+}
+/*
+  8. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+/*
+  9. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+
+body {
+    display: grid;
+    place-content: center;
+    background-color: var(--clr-grey);
+    font-family: var(--ff-primary);
+}
+
+.card {
+    max-width: 20rem;
+    border-radius: .6rem;
+    overflow: hidden;
+    margin: 2rem 0;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+.join-section {
+    background-color: #fff;
+    padding: 1.6rem 1.4rem;
+    display: flex;
+    flex-direction: column;
+    gap: .6rem;
+}
+
+.join-title {
+    font-weight: var(--fw-bold);
+    color: var(--clr-cyan);
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+}
+
+.join-description {
+    color: var(--clr-limegreen);
+}
+
+.join-text {
+    color: var(--clr-greyish-blue);
+    font-size: 1rem;
+}
+
+.subscription-section {
+    background-color: var(--clr-cyan);
+    padding: 1.6rem 1.4rem;
+    display: flex;
+    flex-direction: column;
+    gap: .6rem;
+    color: #fff;
+    border: none;
+}
+
+.subscription-title {
+    font-size: 1.2rem;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+}
+
+.subscription-price {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: .8rem;
+}
+
+.price {
+    font-size: 2rem;
+    font-weight: var(--fw-bold);
+}
+
+.subscription-period {
+    color: var(--clr-grey);
+    opacity: .6;
+}
+
+.subscription-description {
+    color: var(--clr-grey);
+    font-size: 1rem;
+    font-weight: var(--fw-primary);
+}
+
+.signup-btn {
+    background-color: var(--clr-limegreen);
+    border: none;
+    padding: 1rem 0;
+    margin-top: 1rem;
+    border-radius: 8px;
+    color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+    cursor: pointer;
+    transition: transform .4s ease-in-out;
+}
+
+.signup-btn:hover {
+    transform: scale(102%);
+}
+
+.whyus-section {
+    border: none;
+    background-color: hsl(179, 41%, 56%);
+    padding: 1.6rem 1.4rem;
+    display: flex;
+    flex-direction: column;
+    gap: .6rem;
+    color: #fff;
+}
+
+.whyus-title {
+    font-size: 1.2rem;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+}
+
+.whyus-list {
+    list-style: none;
+    padding: 0;
+    color: var(--clr-grey);
+    font-size: 1rem;
+}
+
+@media (min-width: 769px) {
+
+    /*
+     3. Allow percentage-based heights in the application
+    */
+    html, body {
+        height: 100%;
+    }
+
+    .card {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1.2fr;
+        grid-template-areas: "join join"
+                            "subscription whyus";
+        max-width: 670px;
+    }
+
+    .join-section {
+        grid-area: join;
+        justify-content: center;
+        padding: 1.6rem 2.8rem;
+    }
+
+    .join-title {
+        font-size: 1.6rem;
+    }
+
+    .subscription-section {
+        grid-area: subscription;
+        justify-content: space-between;
+        padding: 2.8rem 2.8rem;
+    }
+
+    .subscription-title {
+        font-size: 1.2rem;
+    }
+
+    .whyus-section {
+        grid-area: whyus;
+        justify-content: space-between;
+        padding: 2.8rem 2.8rem;
+    }
+
+    .whyus-title {
+        font-size: 1.2rem;
+    }
+
+    .whyus-list {
+        font-size: 1rem;
+    }
+
+}
